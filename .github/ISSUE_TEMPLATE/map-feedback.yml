@@ -1,0 +1,33 @@
+name: Map feedback
+description: Anything about how the map reads, what it shows, or what it should show.
+title: "Feedback: "
+labels: ["kind:feedback", "status:queued"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This becomes a public issue. Anyone can read it. Do not put anything here you would
+        not publish — an email address included. If you want a reply, use the comment button
+        on the map instead: the form there takes an email address and never publishes it.
+  - type: input
+    id: where
+    attributes:
+      label: Where on the map
+      description: The page and, if you have it, the address in the bar at the time.
+      placeholder: https://openspatials.com/msf/map/#level=territory
+    validations:
+      required: false
+  - type: textarea
+    id: body
+    attributes:
+      label: What you noticed
+      description: What you saw, and what you would expect instead.
+    validations:
+      required: true
+  - type: checkboxes
+    id: public
+    attributes:
+      label: Before you file
+      options:
+        - label: I understand this submission is public.
+          required: true
