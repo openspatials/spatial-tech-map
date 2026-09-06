@@ -1,0 +1,56 @@
+name: Correction
+description: A claim on the map is wrong.
+title: "Correction: "
+labels: ["kind:correction", "status:queued"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This becomes a public issue. Anyone can read it. Do not put anything here you would
+        not publish — an email address included. If you want a reply, use the comment button
+        on the map instead: the form there takes an email address and never publishes it.
+  - type: input
+    id: subject
+    attributes:
+      label: Subject
+      description: The system the claim is about, as the map names it.
+      placeholder: OpenXR
+    validations:
+      required: true
+  - type: input
+    id: capability
+    attributes:
+      label: Capability
+      description: The row the claim sits in, as the map names it.
+      placeholder: Hand tracking
+    validations:
+      required: true
+  - type: dropdown
+    id: level
+    attributes:
+      label: What the map should say
+      options:
+        - Native
+        - Via an extension
+        - Partial
+        - None
+        - The systems conflict
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: >
+        Where this can be checked. A specification section, a release note, a documentation
+        page. One address a line, with the sentence that carries it if you have it.
+    validations:
+      required: true
+  - type: checkboxes
+    id: public
+    attributes:
+      label: Before you file
+      options:
+        - label: I understand this submission is public.
+          required: true
