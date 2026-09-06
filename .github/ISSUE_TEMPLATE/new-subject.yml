@@ -1,0 +1,57 @@
+name: New subject
+description: A system the map does not carry yet.
+title: "New subject: "
+labels: ["kind:new-subject", "status:queued"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This becomes a public issue. Anyone can read it. Do not put anything here you would
+        not publish — an email address included. If you want a reply, use the comment button
+        on the map instead: the form there takes an email address and never publishes it.
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: What the system is called.
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options:
+        - Standard
+        - Device platform
+        - Game engine
+        - Web runtime
+        - Platform
+        - Protocol
+        - Project
+        - World model or capture technique
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: home
+    attributes:
+      label: Where it lives
+      description: The specification, the repository or the product page.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it belongs on the map
+      description: >
+        What it does that the map's capabilities cover, and which of them you would expect it
+        to score on.
+    validations:
+      required: true
+  - type: checkboxes
+    id: public
+    attributes:
+      label: Before you file
+      options:
+        - label: I understand this submission is public.
+          required: true
